@@ -4,7 +4,24 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta charset="utf-8" />    
-    <link href="./Styles/MasterPage.css" rel="stylesheet" type="text/css" />
+    <!--Local file-->
+    <link href="./Répertoire Source/MasterPage.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./Répertoire Source/BarreRecherche.js"></script>
+
+    <link href="./Répertoire Source/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./Répertoire Source/bootstrap.min.js"></script>
+    
+    <!--Bootstrap-->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+
+    <!--JQuery-->
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>-->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <title>
         <asp:ContentPlaceHolder ID="cpTitle" runat="server">
 
@@ -14,32 +31,63 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="wrapper">
-        <div class="menu">
-            <div class="main-container">
-                <div class="fixer-container">
-                    <ul>
-                        <li class="first_menu"><a href="Connexion.aspx">Acceuil</a></li>
-                        <li class="other_menu"><a href="#">Categorie</a></li>
-                        <li class="other_menu"><a href="#">Contact</a></li>
-                        <li class="other_menu"><a href="#">Déconnexion</a></li>
-                    </ul>
+        <!--Barre des menus-->
+        <div class="wrapper">
+            <div class="menu">
+                <div class="main-container">
+                    <div class="fixer-container">
+                        <ul>
+                            <li class="first_menu"><a href="#">Acceuil</a></li>
+                            <li class="other_menu"><a href="#">Modification</a></li>
+                            <li class="other_menu"><a href="#">Contact</a></li>
+                            <li class="other_menu"><a href="Default.aspx">Déconnexion</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="clear"></div>
+        <div class="clear"></div>
+
+        <!--Barre de recherche-->
+        <div class="container">
+            <div class="row">    
+                <div class="col-xs-8 col-xs-offset-2">
+		            <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	        <span id="search_concept">Toutes les catégories</span> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="#contains">Toutes les catégories</a></li>
+                              <li><a href="#its_equal">It's equal</a></li>
+                              <li><a href="#greather_than">Greather than ></a></li>
+                              <li><a href="#less_than">Less than < </a></li>
+                              <li class="divider"></li>
+                              <li><a href="#all">Anything</a></li>
+                            </ul>
+                        </div>
+                        <input type="hidden" name="search_param" value="all" id="search_param"/>     
+                        <input type="text" class="form-control" name="x" placeholder="Terme de recherche..."/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+	        </div>
+        </div>
+
+        <div class="clear"></div>
     
-    <div class="content">
-        <asp:ContentPlaceHolder id="cpBody" runat="server" />
-    </div>
+        <div class="content">
+            <asp:ContentPlaceHolder id="cpBody" runat="server" />
+        </div>
 
-    <div class="clear"></div>
+        <div class="clear"></div>
 
-    <div class="footer">
-        <h2>Département d'informatique G.-G. &copy; Mohamed H. Guelleh, Marc-Antoine Lussier</h2>
-    </div>
+        <div class="footer">
+            <h2>Département d'informatique G.-G. &copy; Mohamed H. Guelleh, Marc-Antoine Lussier</h2>
+        </div>
     </form>
 </body>
 </html>
