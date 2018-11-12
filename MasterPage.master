@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" Debug="true" %>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta charset="utf-8" />    
+    <link href="./Styles/MasterPage.css" rel="stylesheet" type="text/css" />
+    <title>
+        <asp:ContentPlaceHolder ID="cpTitle" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder id="cpHead" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+        <div class="menu">
+            <div class="main-container">
+                <div class="fixer-container">
+                    <ul>
+                        <li class="first_menu"><a href="Connexion.aspx">Acceuil</a></li>
+                        <li class="other_menu"><a href="#">Categorie</a></li>
+                        <li class="other_menu"><a href="#">Contact</a></li>
+                        <li class="other_menu"><a href="#">Déconnexion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    
+    <div class="content">
+        <asp:ContentPlaceHolder id="cpBody" runat="server" />
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="footer">
+        <h2>Département d'informatique G.-G. &copy; Mohamed H. Guelleh, Marc-Antoine Lussier</h2>
+    </div>
+    </form>
+</body>
+</html>
