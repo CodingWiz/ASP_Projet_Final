@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Modifier.master.cs" Inherits="Modifier" MasterPageFile="~/MasterPage.master"%>
+
+
+
+<asp:Content ID="ContentModifierMain" ContentPlaceHolderID="cpBody" runat="server">
+    <asp:Button ID="btnLienAjout" Text="Ajout" runat="server" OnClick="btnLienAjout_Click"/>
+    <asp:Button ID="btnLienMod" runat="server" Text="Modification" OnClick="btnLienMod_Click"/>
+    <asp:Button  ID="btnLienSup" runat="server" Text="Suppression" OnClick="btnLienSup_Click"/>
+
+    <br />
+    <asp:ContentPlaceHolder id="cpMod" runat="server"></asp:ContentPlaceHolder>
+        
+   
+</asp:Content>
