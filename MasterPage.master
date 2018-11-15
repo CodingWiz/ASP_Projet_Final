@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" Debug="true" %>
+﻿<%@ Master Language="C#" Debug="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
