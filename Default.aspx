@@ -6,10 +6,15 @@
     <style>
 body {
     background-color: lightblue;
+    font-size:12px
 }
 .titre{
     text-shadow: 3px 6px 2px #333;
     font-size: medium;
+}
+.erreur{
+    color:red;
+    font-size:10px
 }
 </style>
     <title>Disques</title>
@@ -31,6 +36,14 @@ body {
                     </td>
                     <td>
                     <asp:TextBox ID="tbNomU" runat="server"></asp:TextBox>
+                        <asp:Label runat="server"  CssClass="erreur">
+                        <asp:RequiredFieldValidator ID="valNomU" runat="server"
+                     ControlToValidate="tbNomU"
+                     EnableClientScript="false"
+                     Display="dynamic"
+                     ErrorMessage="Le nom d'utilisateur doit être défini!" />
+                        </asp:Label>
+                       
                     </td>
 
                 </tr>
@@ -40,7 +53,27 @@ body {
                     </td>
                     <td>
                     <asp:TextBox ID="tbMDP" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:Label runat="server" CssClass="erreur">
+                     <asp:RequiredFieldValidator ID="valMDP" runat="server"
+                     ControlToValidate="tbMDP"
+                     EnableClientScript="false"
+                     Display="dynamic"
+                     ErrorMessage="Le mot de passe doit être défini!" />
+                        
+                         <asp:RangeValidator ID="rangeMDP" runat="server"
+                             ControlToValidate="tbMDP"
+                             EnableClientScript="false"
+                             Display="dynamic"
+                             Type="Integer"
+                              ErrorMessage="Le mot de passe doit être un nombre entre 11111 et 99999!"
+                             MaximumValue="99999" MinimumValue="11111" />
+                        </asp:Label>
                     </td>
+                    
+
+                </tr>
+                <tr>
+                    <td class="erreur"><asp:Label runat="server" ID="lblErreurSQL"></asp:Label></td>
                 </tr>
             </table>
             

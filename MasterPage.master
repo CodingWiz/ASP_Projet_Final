@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" Debug="true" %>
+﻿<%@ Master Language="C#" Debug="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -6,21 +6,21 @@
 <meta charset="utf-8" />    
     <!--Local file-->
     <link href="./Répertoire Source/MasterPage.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="./Répertoire Source/BarreRecherche.js"></script>
+    <script type="text/javascript" src="./Répertoire Source/librairie.js"></script>
 
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="./Répertoire Source/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="./Répertoire Source/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./Répertoire Source/bootstrap.min.js"></script>-->
     
     <!--Bootstrap-->
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
 
     <!--JQuery-->
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>-->
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
     <title>
         <asp:ContentPlaceHolder ID="cpTitle" runat="server">
@@ -37,14 +37,15 @@
                 <div class="main-container">
                     <div class="fixer-container">
                         <ul>
-                            <li class="first_menu"><a href="ListeTous.aspx">Acceuil</a></li>
+                            <li class="first_menu"><asp:LinkButton runat="server" OnClick="lbPageA_Click" ID="lbPageA">Accueil</asp:LinkButton></li>
                             <li class="other_menu"><a href="Ajout.aspx">Modification</a></li>
                             <li class="other_menu"><a href="Courriel.aspx">Courriel</a></li>
-                            <li class="other_menu"><a href="Default.aspx">Déconnexion</a></li>
+                            <li class="other_menu"><asp:LinkButton ID="idDeconnecte" runat="server" OnClick="deconnecte">Déconnexion</asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <asp:ContentPlaceHolder ID="typeAffichageDVD" runat="server" />
         </div>
 
         <div class="clear"></div>

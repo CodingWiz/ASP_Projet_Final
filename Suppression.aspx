@@ -3,110 +3,14 @@
    Inherits="Suppression" MasterPageFile="~/Modifier.master"%>
 
 <asp:Content ID="content1" ContentPlaceHolderID="cpMod" runat="server">
-   <div id="divDVDs" runat="server">
 
 
 
-            <table>
-                <tr>
-                    <td >
-                    <asp:Image runat="server" ImageUrl="~/imagespochette/r5lldc1bq1bz.jpg" Height="210px" Width="164px" />
+<div id="divDVDs" runat="server">
 
-                    </td>
-                    <td>
-                    No:
-                    </td>
-                    <td >
-                        4422
-                    </td>
-                </tr>
-                <tr>
-                   
-                    <td colspan="2">
-                    Titre Francais:  
-                    </td>
-                    <td>
-                    DERP
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td colspan="2">
-                    Titre Original:  
-                    </td>
-                    <td>
-                    DERP
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td colspan="2">
-                    Producteur:
-                    </td>
-                    <td>
-                    mkk
-                    </td>
-                    </tr>
-                    <tr>
-                    <td colspan="2">
-                    Réalisateur:
-                    </td>
-                    <td >
-                    blablabla
-                    </td>
-                    </tr>
-                    <tr>
-                    
-                    <td colspan="2">
-                    Acteurs:
-                    </td>
-                    <td>
-                    Der,hjhjh,akskaka
-                    </td>
-                    </tr>
-                    <tr>
-                    
-                    <td colspan="2">
-                    Nombre de disques:
-                    </td>
-                    <td class="auto-style1">
-                    1
-                    </td>
-                    </tr>
-                    <tr>
-                    
-                    <td colspan="2">
-                    Format:
-                    </td>
-                    <td>
-                    Blu-Ray
-                    </td>
-                    </tr>
-                <tr>
-                
-                    <td colspan="2">
-                    Durée:
-                    </td>
-                    <td>
-                    199999 minutes
-                    </td>
-                    </tr>
-                <tr>
-                    
-                    <td colspan="2">Appartient à:</td>
-                    <td >Bob Ross</td>
-                    </tr>
-                <tr>
-                    
-                    <td colspan="2">
-                    Résumé:
-                    </td>
-                    <td>
-                    Lalilulelo...Lalilulelo...Lalilulelo...Lalilulelo...Lalilulelo...Lalilulelo...
-                    </td>
-                    </tr>
-                    
-            </table>
+                   <asp:Label runat="server" CssClass="titre">Infos du film à supprimer</asp:Label>
+
+            
             <br/>
             <br/>
             
@@ -120,15 +24,41 @@
 <br />
 <br />
 
-<asp:DropDownList ID="ddl" runat="server">
-<asp:ListItem Text="C'est l'apocalypse" Value="1" Selected="True" />
+<asp:DropDownList ID="ddl" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_SelectedIndexChanged">
+    <asp:ListItem Value="0">Sélectionner</asp:ListItem>
 </asp:DropDownList>
        
 <br />
 <br />
        
 <asp:PlaceHolder id="phDynamique" runat="server" />
+    <br />
+    <style type="text/css">
+        .auto-style1 {
+            height: 19px;
+        }
+          table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 400px;
+}
 
+th, td {
+    border: 1px solid black;
+    width: 300px;
+}
+.titre{
+    color: #82a9bf; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0;text-align: center;
+    text-shadow: 2px 3px 3px #333;
+}
+
+    </style>
 <!--<asp:HyperLink runat="server" NavigateUrl="~/Ajout.aspx">Ajout</asp:HyperLink>-->
 
+<asp:Button ID="btnSupprimer" runat="server" Text="Supprimer" OnClick="btnSuppression_Click" OnClientClick="return confirm('Voulez vous vraiment l'effacer?');" />
+    
 </asp:Content>

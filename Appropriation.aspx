@@ -1,20 +1,11 @@
-<%@ Page Language="C#"  MasterPageFile="~/MasterPage.master" CodeFile="AffichageDetaille.aspx.cs" Inherits="AffichageDetaille"%>
+<%@ Page Language="C#"  MasterPageFile="~/MasterPage.master" CodeFile="Appropriation.aspx.cs" Inherits="AffichageDetaille"%>
 
 <asp:Content ID="contentListeDVD" ContentPlaceHolderID="cpBody" runat="server">
-   <asp:Button runat="server" ID="btnPrecedent" OnClientClick="JavaScript:window.history.back(1); return false;" Text="Page précédente" autopostback="false"/> 
+  <asp:Button runat="server" ID="btnPrecedent" OnClick="btnPrecedent_Click" Text="Page précédente"  /> 
                <div id="divDVDs" runat="server">
-
                    <asp:Label runat="server" CssClass="titre">Infos du film </asp:Label>
-                   <br/>
-                   <asp:PlaceHolder id="phDynamique" runat="server" />
-
-<!--<asp:HyperLink runat="server" NavigateUrl="~/Ajout.aspx">Ajout</asp:HyperLink>-->
-
-
-                    <br/>
-            
-           
-
+            <br/>  
+            <br/>
         </div>
 
 </asp:Content>

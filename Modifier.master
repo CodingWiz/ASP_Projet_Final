@@ -3,9 +3,11 @@
 
 
 <asp:Content ID="ContentModifierMain" ContentPlaceHolderID="cpBody" runat="server">
+
     <asp:Button ID="btnLienAjout" Text="Ajout" runat="server" OnClick="btnLienAjout_Click"/>
     <asp:Button ID="btnLienMod" runat="server" Text="Modification" OnClick="btnLienMod_Click"/>
     <asp:Button  ID="btnLienSup" runat="server" Text="Suppression" OnClick="btnLienSup_Click"/>
+    <asp:Button runat="server" ID="btnPrecedent" OnClick="btnPrecedent_Click" Text="Page précédente" autopostback="false"/> 
 
     <br />
     <asp:ContentPlaceHolder id="cpMod" runat="server"></asp:ContentPlaceHolder>

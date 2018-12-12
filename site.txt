@@ -1,3 +1,5 @@
 https://www.youtube.com/watch?v=IzlwwDPC7pk
 
+select Nom from FilmsActeurs inner join Acteurs on FilmsActeurs.NoActeur=Acteurs.NoActeur where NoFilm=181118
+
 https://stackoverflow.com/questions/23053442/bootstrap-amazon-style-search-bar

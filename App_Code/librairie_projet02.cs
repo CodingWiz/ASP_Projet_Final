@@ -35,6 +35,14 @@ namespace librairie_projet2
          return br;
       }
 
+      public FileUpload fileUploadDYN(Control Conteneur, String strID)
+      {
+         FileUpload fileUpload = new FileUpload();
+         fileUpload.ID = strID;
+         Conteneur.Controls.Add(fileUpload);
+         return fileUpload;
+      }
+
       protected Button btnDYN(Control Conteneur, String strID, String strValeur)
       {
          Button btn = new Button();
@@ -188,18 +196,29 @@ namespace librairie_projet2
          return textBox;
       }*/
 
-      /*public DropDownList ddlDYN(Control Conteneur, String strID, String strValeur, String strMaxLength, String strStyle)
+      public ListBox lbDYN(Control Conteneur, String strID)
       {
-         DropDownList ddl = new DropDownList();
+         ListBox lb = new ListBox();
+         lb.ID = strID;
+         lb.SelectionMode = ListSelectionMode.Multiple;
+         Conteneur.Controls.Add(lb);
+         return lb;
+      }
+      public ListView lsDYN(Control Conteneur, String strID) {
+            ListView ls = new ListView();
+            ls.ID = strID;
+            Conteneur.Controls.Add(ls);
+            return ls;
+        } 
+        public DropDownList ddlDYN(Control Conteneur, String strID)
+        {
+            DropDownList ddl = new DropDownList();
+            ddl.ID = strID;
+            Conteneur.Controls.Add(ddl);
+            return ddl;
+        }
 
-         ddl.ID = strID;
-         ddl.
-
-         Conteneur.Controls.Add(ddl);
-         return ddl;
-      }*/
-
-      public TableCell tdDYN(TableRow Conteneur, String strID, String strStyle)
+        public TableCell tdDYN(TableRow Conteneur, String strID, String strStyle)
       {
          TableCell tableCell = new TableCell();
 
@@ -218,13 +237,18 @@ namespace librairie_projet2
          return tableRow;
       }
 
-      public Image img(Control Conteneur, String strID, String strValeur, String strStyle)
+      public Image img(Control Conteneur, String strID, String strValeur)
       {
          Image image = new Image();
          image.ID = strID;
-         image.ImageUrl = "./images/" + strValeur + ".png";
-         image.CssClass = strStyle;
+         image.ImageUrl = strValeur;
          Conteneur.Controls.Add(image);
+         return image;
+      }
+      public Image img(Control Conteneur, String strID, String strValeur, String strStyle)
+      {
+         Image image = img(Conteneur, strID, strValeur);
+         image.CssClass = strStyle;
          return image;
       }
       public ImageButton imgBtn(Control Conteneur, String strID, String strValeur, String strStyle, String strArgs)
@@ -234,7 +258,17 @@ namespace librairie_projet2
          image.Attributes.Add("onclick", "return false;");
          image.Attributes.Add("onclick", strArgs + "; return false");
          //image.OnClientClick = "return false;";
-         image.ImageUrl = "./images/" + strValeur + ".png";
+         image.ImageUrl = strValeur;
+         image.CssClass = strStyle;
+         Conteneur.Controls.Add(image);
+         return image;
+      }
+      public ImageButton imgBtn(Control Conteneur, String strID, String strValeur, String strStyle, ImageClickEventHandler nomFonction)
+      {
+         ImageButton image = new ImageButton();
+         image.ID = strID;
+         image.Click += nomFonction;
+         image.ImageUrl = strValeur;
          image.CssClass = strStyle;
          Conteneur.Controls.Add(image);
          return image;
